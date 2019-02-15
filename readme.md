@@ -1,1 +1,1 @@
-this a learning repository, i exercise all kind of works here, languahe no bar. 
+this a learning repository, i exercise all kind of works here, language no bar. 
