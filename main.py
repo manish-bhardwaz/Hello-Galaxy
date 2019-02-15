@@ -1,6 +1,5 @@
 import calculator
 
-
 def calculate():
     operation = raw_input('''
     Please type in the math operation you would like to complete:
@@ -12,25 +11,18 @@ def calculate():
     x = int(input("Enter first number : "))
     y = int(input("Enter second number : "))
 
-    if operation == '+':
-        print('{} + {} = '.format(x, y))
-        print(calculator.add(x, y))
-
-    elif operation == '-':
-        print('{} - {} = '.format(x, y))
-        print(calculator.subtract(x, y))
-
-    elif operation == '*':
-        print('{} * {} = '.format(x, y))
-        print(calculator.multiply(x, y))
-
-    elif operation == '/':
-        print('{} + {} = '.format(x, y))
-        print(calculator.divide(x, y))
-    else:
-        print('invalid operation')
-
+    print('{} {} {} = {}'.format(x, operation, y, execute(operation, x, y)))
     again()
+
+
+def execute(operation, x, y):
+    switcher = {
+        '+': calculator.add(x, y),
+        '-': calculator.subtract(x, y),
+        '*': calculator.multiply(x, y),
+        '/': calculator.divide(x, y),
+    }
+    return switcher.get(operation, 'invalid operation')
 
 
 def again():
